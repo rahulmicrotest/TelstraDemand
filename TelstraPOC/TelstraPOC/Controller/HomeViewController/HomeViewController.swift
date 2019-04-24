@@ -14,7 +14,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tableViewHome: UITableView!
     
     // declare RefreshController for Pull to refresh
-    private let refreshController:UIRefreshControl! = nil
+    private var refreshController:UIRefreshControl! = nil
     
     //declare DataSource , responsible for no of rows and tableview Cell configuration
     private var dataSource: HomeTableViewDataSource!
@@ -30,6 +30,8 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        // Set pull to refresh
+        configurePullToRefresh()
         // Fetch Data using ViewModel and Alamofire
         loadData()
     }
@@ -41,6 +43,27 @@ class HomeViewController: UIViewController {
 //
 
 private extension HomeViewController {
+    
+    // Settings for Pull To Refresh Object
+    func configurePullToRefresh(){
+        self.refreshController  = UIRefreshControl()
+        self.refreshController.tintColor = UIColor.red
+        self.refreshController.attributedTitle = NSAttributedString(string: Constants.pullToRefresh)
+        self.refreshController.addTarget(self, action: #selector(pullToRefresh), for: UIControl.Event.valueChanged)
+        self.tableViewHome.addSubview(self.refreshController)
+    }
+    
+    // Calling Objective C Selector method after pulling
+    @objc func pullToRefresh(sender: AnyObject){
+        loadData()
+        stopPullToRefresh()
+    }
+    
+    // Stopping Pull To Refresh
+    func stopPullToRefresh(){
+        self.refreshController.endRefreshing()
+    }
+    
     // To get call back from ViewModel after fetching Data and reload TableView
     func loadData() {
         

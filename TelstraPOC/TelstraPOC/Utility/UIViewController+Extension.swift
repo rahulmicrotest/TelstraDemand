@@ -12,6 +12,7 @@ import MBProgressHUD
 
 extension UIViewController {
     
+    // For showing Alert View if anything go wrong
     func showAlertWith(message: AlertMessage, style: UIAlertController.Style = .alert) {
         
         let alertController = UIAlertController(title: message.title, message: message.body, preferredStyle: style)
@@ -25,6 +26,7 @@ extension UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
+    // For Show Hide Activity Indicator using MBProgressHUD
     func shouldHideLoader(isHidden: Bool) {
         if (isHidden) {
             MBProgressHUD.hide(for: self.view, animated: true)

@@ -19,5 +19,7 @@ struct Constants {
     static let errorAlertTitle = "error"
     static let genericErrorMessage = "Something went wrong, please try again."
     static let noTitle = "No Title"
+    static let pullToRefresh = "Pull to refresh"
+
 
 }
