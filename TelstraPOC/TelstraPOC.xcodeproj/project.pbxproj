@@ -24,6 +24,7 @@
 		1F927585226DFE060061F5D6 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F927584226DFE060061F5D6 /* HomeViewModel.swift */; };
 		1F927587226E05FD0061F5D6 /* NetworkEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F927586226E05FD0061F5D6 /* NetworkEndPoint.swift */; };
 		1F927589226E0A500061F5D6 /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F927588226E0A500061F5D6 /* AlertMessage.swift */; };
+		1FC06D3F22702FE600D9ADD8 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC06D3E22702FE600D9ADD8 /* UIImageView+Extension.swift */; };
 		1FD3854F226F4B9B00AF0ACA /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD3854E226F4B9B00AF0ACA /* UIViewController+Extension.swift */; };
 		2C41694DBD15BAC74CE189AE /* Pods_TelstraPOC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058104137EE1408D5BB0BACF /* Pods_TelstraPOC.framework */; };
 		5708B563A6BC1CC349E4333D /* Pods_TelstraPOCUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3B14DBF97804AEC79160452 /* Pods_TelstraPOCUITests.framework */; };
@@ -71,6 +72,7 @@
 		1F927584226DFE060061F5D6 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		1F927586226E05FD0061F5D6 /* NetworkEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEndPoint.swift; sourceTree = "<group>"; };
 		1F927588226E0A500061F5D6 /* AlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
+		1FC06D3E22702FE600D9ADD8 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		1FD3854E226F4B9B00AF0ACA /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		3667C4FA8EECBF1AF4ED86CA /* Pods-TelstraPOCUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TelstraPOCUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TelstraPOCUITests/Pods-TelstraPOCUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4D0AEFD5950482298B5645BA /* Pods-TelstraPOCTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TelstraPOCTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TelstraPOCTests/Pods-TelstraPOCTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				1F92757E226DFDBE0061F5D6 /* Constants.swift */,
 				1F927588226E0A500061F5D6 /* AlertMessage.swift */,
 				1FD3854E226F4B9B00AF0ACA /* UIViewController+Extension.swift */,
+				1FC06D3E22702FE600D9ADD8 /* UIImageView+Extension.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -450,14 +453,18 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TelstraPOC/Pods-TelstraPOC-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -473,6 +480,7 @@
 			files = (
 				1FD3854F226F4B9B00AF0ACA /* UIViewController+Extension.swift in Sources */,
 				1F92754B226DFBB50061F5D6 /* HomeViewController.swift in Sources */,
+				1FC06D3F22702FE600D9ADD8 /* UIImageView+Extension.swift in Sources */,
 				1F927589226E0A500061F5D6 /* AlertMessage.swift in Sources */,
 				1F927549226DFBB50061F5D6 /* AppDelegate.swift in Sources */,
 				1F4F5BBF226EEC7000014F16 /* HomeTableViewDataSource.swift in Sources */,

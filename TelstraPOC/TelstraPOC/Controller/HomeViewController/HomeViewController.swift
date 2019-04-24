@@ -32,6 +32,7 @@ class HomeViewController: UIViewController {
         
         // Set pull to refresh
         configurePullToRefresh()
+        
         // Fetch Data using ViewModel and Alamofire
         loadData()
     }
@@ -72,21 +73,27 @@ private extension HomeViewController {
         
         // Call Few Model FetchRequest to get callback success/ Failure
         viewModel.fetchRequest { (status, errorMessage) in
-            if status == true {
-                // Pass ViewModel Object to DataSource to set Table
-                self.dataSource = HomeTableViewDataSource(model: self.viewModel)
+            
+            switch status {
+                case true:
+                    // Pass ViewModel Object to DataSource to set Table
+                    self.dataSource = HomeTableViewDataSource(model: self.viewModel)
+                    
+                    // Assign Data Source to tableView DataSource
+                    self.tableViewHome.dataSource = self.dataSource
+                    
+                    // Setting Title
+                    self.title = self.viewModel.screenTitle()
+                    
+                    // Call Reload TableView
+                    self.tableViewHome.reloadData()
                 
-                // Assign Data Source to tableView DataSource
-                self.tableViewHome.dataSource = self.dataSource
-                
-                // Call Reload TableView
-                self.tableViewHome.reloadData()
-            }else if status == false {
-                print(status)
+                case false:
+                    self.showAlertWith(message: errorMessage ?? AlertMessage(title: "Error", body:Constants.generalErrorMessage))
             }
             // Stop Activity Indiacator either success/Failure
             self.shouldHideLoader(isHidden: true)
-       }
+
+        }
     }
-    
 }

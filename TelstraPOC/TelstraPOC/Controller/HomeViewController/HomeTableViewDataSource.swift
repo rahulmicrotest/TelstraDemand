@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SDWebImage
 
 class HomeTableViewDataSource: NSObject {
     
@@ -37,6 +38,17 @@ extension HomeTableViewDataSource: UITableViewDataSource {
         let index = indexPath.row
         // Assign Model object to cell Model to create the each cell Data
         cell.model = HomeTableViewCell.Model(modelObj: self.homeViewModel.model, index: index)
+        
+        ///Assigning the Description and ImageUrls
+        let urlstr = cell.model?.imageURL
+        cell.imageViewPhoto.sd_setImage(with: URL(string: urlstr ?? ""),
+                                      placeholderImage: UIImage(named: Constants.placeHolderImage))
+
+        // Use Kingfisher Image Download Framework
+//        if(cell.model?.imageURL != nil){
+//            cell.imageViewPhoto.setImage(with: (cell.model?.imageURL)!)
+//        }
+
         return cell
     }
     

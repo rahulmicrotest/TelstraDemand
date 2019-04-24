@@ -9,6 +9,8 @@ target 'TelstraPOC' do
 
   pod "Alamofire"
   pod "MBProgressHUD"
+  pod "Kingfisher"
+  pod "SDWebImage"
 
   target 'TelstraPOCTests' do
     inherit! :search_paths

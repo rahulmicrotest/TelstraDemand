@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Kingfisher
 
 class HomeTableViewCell: UITableViewCell {
     
@@ -25,6 +26,11 @@ class HomeTableViewCell: UITableViewCell {
             // Checking for null value
             titleLbl.text = model.title ?? ""
             descLbl.text = model.desc ?? ""
+            
+//            guard let imageURL = model.imageURL  else {
+//                return
+//            }
+//            imageViewPhoto.setImage(with: imageURL)
         }
     }
 }
@@ -36,10 +42,13 @@ extension HomeTableViewCell {
         // two attributes
         let title: String?
         let desc: String?
+        let imageURL: String?
+        
         // Getting object form View Model cell for RowIndex
         init(modelObj: HomeModel, index: Int){
             title = modelObj.rows?[index].title
             desc = modelObj.rows?[index].description
+            imageURL = modelObj.rows?[index].imageHref
         }
     }
 }
